@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Backbone</title>
+		<style>
+			li{list-style:none;border-bottom:1px #ccc dotted;padding:10px 0 10px 0}
+			h3{padding:8px;background:#f4f4f4;}
+			body{font-family: Arial;}
+			a{color: red;}
+			a:hover{text-decoration: none;}
+			li a{color:lightblue;text-decoration: none;}
+			li a:first-child{color:#ccc;text-decoration: none;}
+		</style>
+
+</head>
+<body>
+	   <h3>Top 10 Most Interesting Companies <a>World Wide</a></h3>
+	<ul class="users"></ul>
+
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
+    <script type="text/template" id="userlist_template">
+
+		<li>
+			 <a href="<%= website %>"><%= company %></a><br>
+			 <a href="<%= twitter %>">See Twitter</a>
+		</li>
+	</script>
+	
+
+	<script>
+	$(function(){
+			var User = Backbone.Model.extend();
+			var UserList = Backbone.Collection.extend({
+				model: User,
+				url: 'users.json'
+			});
+			//Users View
+			var UsersView = Backbone.View.extend({
+				template: _.template($('#userlist_template').html()),
+				render: function(ev){
+					_.each(this.model.models, function(user){
+						var username = user.attributes['username'];
+						var email = user.attributes['email'];
+						//Assign template
+						var template = this.template(user.toJSON());
+						
+						$(this.el).append(template);
+					},this);
+					return this;
+				}
+			});
+			
+			var userList = new UserList;
+			
+			//App View
+			var AppView = Backbone.View.extend({
+				el:"body",
+				render: function(){
+					var usersView = new UsersView({model:userList});
+					var usersViewRender = usersView.render().el;
+					$('.users').html(usersViewRender);
+				},
+				initialize: function(){
+					var Options = {};
+					Options.success = this.render;
+					userList.fetch(Options);
+				}
+			});
+			var App = new AppView;
+		})
+	</script>
+</body>
+</html>

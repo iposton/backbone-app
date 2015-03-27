@@ -1,0 +1,52 @@
+[
+	{
+		"company" : "Bloomberg Philanthropies",
+		"twitter" : "https://twitter.com/bloombergdotorg",
+		"website" : "http://www.bloomberg.org/"
+	},
+	{
+	    "company" : "Dropbox",
+		"twitter" : "https://twitter.com/dropbox",
+		"website" : "https://www.dropbox.com/"
+	},
+	{
+		"company" : "ZipDial",
+		"twitter" : "https://twitter.com/zipdial",
+		"website" : "http://zipdial.com/corp/"
+	},
+	{
+		"company" : "DonorsChoose",
+		"twitter" : "https://twitter.com/DonorsChoose",
+		"website" : "http://www.donorschoose.org/"
+	},
+	{
+	    "company" : "Shazam",
+		"twitter" : "https://twitter.com/shazam",
+		"website" : "http://www.shazam.com/"
+	},
+	{
+		"company" : "Water-Gen",
+		"twitter" : "http://www.water-gen.com/",
+		"website" : "http://www.water-gen.com/"
+	},
+		{
+		"company" : "Shutterstock",
+		"twitter" : "https://twitter.com/Shutterstock",
+		"website" : "http://www.shutterstock.com/"
+	},
+	{
+		"company" : "GitHub",
+		"twitter" : "https://twitter.com/GitHub",
+		"website" : "https://github.com/"
+	},
+	{
+	    "company" : "Stats",
+		"twitter" : "https://twitter.com/STATSbiznews",
+		"website" : "http://www.stats.com/"
+	},
+	{
+		"company" : "XL Hybrids",
+		"twitter" : "https://twitter.com/xlhybrids",
+		"website" : "http://www.xlhybrids.com/"
+	}
+]
