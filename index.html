@@ -3,14 +3,22 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Backbone</title>
+	<link rel="stylesheet" href="css/ionicons.min.css">
+	<link rel="stylesheet" href="css/animate.css">
 		<style>
 			li{list-style:none;border-bottom:1px #ccc dotted;padding:10px 0 10px 0}
 			h3{padding:8px;background:#f4f4f4;}
 			body{font-family: Arial;}
 			a{color: red;}
 			a:hover{text-decoration: none;}
-			li a{color:lightblue;text-decoration: none;}
+			li a{color:#00aced;text-decoration: none;font-size: 17px;}
 			li a:first-child{color:#ccc;text-decoration: none;}
+			  .ian{transition:font-size 1s ease, color 1s; text-decoration: none;}
+			 .ian:hover{font-size:20px; color: orange; left: 200px;}
+			.ion-social-twitter{transition:all 1s; transform:translate(0px, 0px);}
+		 .ion-social-twitter:hover{transform:translate(300px, 0px);
+		 	-webkit-transform:translate(300px, 0px); -ms-transform:translate(300px, 0px);}
+	    
 		</style>
 
 </head>
@@ -22,15 +30,24 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script>
+
     <script type="text/template" id="userlist_template">
 
 		<li>
-			 <a href="<%= website %>"><%= company %></a><br>
-			 <a href="<%= twitter %>">See Twitter</a>
+			 <a href="<%= website %>" id="js--wp-bird"><%= company %></a><br>
+			 <a href="<%= twitter %>"><i class="ion-social-twitter"></i></a>
 		</li>
-	</script>
 	
 
+
+	</script>
+	<footer>This app was built by <a class="ian" href="http://www.ianposton.com/blog/portfolio.html">Ian Poston</a> with the following technologies: jquery, node.js, backbone.js, and underscore.js &copy; 2015</footer>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/scripts.js"></script>
 	<script>
 	$(function(){
 			var User = Backbone.Model.extend();
@@ -73,5 +90,6 @@
 			var App = new AppView;
 		})
 	</script>
+	
 </body>
 </html>
